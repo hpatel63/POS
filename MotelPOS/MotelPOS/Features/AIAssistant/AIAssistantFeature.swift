@@ -39,11 +39,13 @@ struct AIAssistantFeature: Reducer {
                 let userMessage = ChatMessage(role: .user, content: state.input)
                 state.messages.append(userMessage)
                 let query = state.input
+                let modules = state.allowedModules
                 state.input = ""
                 state.isStreaming = true
                 // ChatGPT Request Handler
                 return .run { send in
-                    let request = AIRequest(query: query, context: ["modules": state.allowedModules.map { $0.rawValue }.joined(separator: ",")], role: .associate)
+                    let contextModules = modules.map { $0.rawValue }.joined(separator: ",")
+                    let request = AIRequest(query: query, context: ["modules": contextModules], role: .associate)
                     for try await event in services.ai.streamInsight(for: request).values {
                         await send(.receiveStream(.success(event)))
                     }

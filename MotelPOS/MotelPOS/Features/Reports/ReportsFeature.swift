@@ -57,10 +57,11 @@ struct ReportsFeature: Reducer {
             case .export:
                 guard let report = state.selectedReport else { return .none }
                 let summary = ReportSummary(title: report.rawValue, metrics: ["Start": state.startDate.formatted(), "End": state.endDate.formatted()])
+                let exportFormat = state.exportFormat
                 return .run { send in
                     do {
                         let url: URL
-                        switch state.exportFormat {
+                        switch exportFormat {
                         case .pdf:
                             url = try services.pdf.generateTaxPacket(for: SeedData.initialProperties.first!, reports: [summary])
                         case .csv:
