@@ -1,0 +1,11 @@
+default_platform(:ios)
+
+desc "CI build"
+lane :ci do
+  xcversion(version: '15.0') rescue nil
+  scan(
+    scheme: "MotelPOS",
+    devices: ["iPad (10th generation)"],
+    clean: true
+  )
+end
