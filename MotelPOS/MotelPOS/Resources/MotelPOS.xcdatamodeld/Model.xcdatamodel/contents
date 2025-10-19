@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21753" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PropertyEntity" representedClassName="PropertyEntity" syncable="YES">
+        <attribute name="addressLine1" optional="YES" attributeType="String"/>
+        <attribute name="addressLine2" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="code" optional="NO" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDeleted" optional="NO" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="postalCode" optional="YES" attributeType="String"/>
+        <attribute name="retentionUntil" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="timezoneIdentifier" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="RoomEntity" representedClassName="RoomEntity" syncable="YES">
+        <attribute name="beds" optional="NO" attributeType="Integer 16" defaultValueString="0"/>
+        <attribute name="building" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="floor" optional="NO" attributeType="Integer 16" defaultValueString="0"/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDeleted" optional="NO" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="NO" attributeType="String"/>
+        <attribute name="propertyID" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="smoking" optional="NO" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="status" optional="NO" attributeType="String"/>
+        <attribute name="type" optional="NO" attributeType="String"/>
+        <attribute name="updatedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+</model>
